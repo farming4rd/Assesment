@@ -1,0 +1,41 @@
+dokumentasi
+
+kebutuhan aplikasi
+
+ansible --version
+ansible 2.9.18
+
+terraform -version
+Terraform v0.6.11
+
+1)Hasil dari terrtaform
+untuk terrafom sudah berhasil dilakukan (image finish_terraform.png) dan berhasil ssh kedalam EC2 instance yang sudah tercreate (EC2_18.139.1.255.png) dengan output hasil sebagai berikut:
+
+  - membuat 1 VPC ( image VPC.png )
+	* dengan 4 VPC subnets dengan kondisi 2 subnet publik & 2 subnet privat di avability zona berbeda dalam satu region
+  - membuat aws key dengan public key ( image key_pair.png)
+  - membuat 4 SG dengan ketentuan SSH, Webserver, RDS, ELB (image EC2_SG.png)
+  - provision 2 EC2 instance ubuntu 18.04 di 2 publik aviabiliti zone berbeda (image EC2.png)
+  - provision RDS instance di private subnet (image RDS.png & RDS_subnet_group.png)
+  - launc dan configur publik facing VPC ELB (cross availability zone ) dengan VPC subnet (image ELB.png)
+  - register ECS instance di ELB 
+  - ELB dns dan register/create dns entry menggunakan Route53 (image Route53_console.png)
+
+untuk deploymen wordpress menggunakan SSL cert masih gagal, 
+       dengan kondisi config ansible renew auto menggungakan cron.
+	>>>>>>>>> beerdasarkan dari log letsencrupt, domain yang saya gunakan tidak dapat divalidasi ketika creating ssl (image error_domain_lertendcrypt.png).
+tetapi jika tidak menggunakan ssl, wordpress dapat di akses (image wordpress_login_tanpa_ssl.png) dengan kondisi database RDS dicreate manual dari consol.
+
+
+2) create docker-compose jenkins
+
+untuk membuat docker-compose configurasi jenkins dengan kodisi setup wizard disable  sudah berhasil up ( image docker-compose_up_status.png) dengan ketentuan sebagai berikut:
+
+  - docker-compose.yml v2 (image docker-compose-v2.png)
+  - Dockerfile yang memproses instalasi plugin kubernetes ( image dockerfile.png, docker-compose-auto-install-kubePlugin.png, & plagin-kubernetes.png)
+
+
+Note:
+
+untuk detail lebih jelas dapat di lihat pada folder capture terraform & dockerfile.
+Step yang palingn sulit adalah ketita saya configurasi ansible agar dynamic membaca EC2 host, karena configurasi current host nya saya buat statik  di inventory.txt dan penghambat saya dalam pengerjaan test soal no 1 adalah di domain saya yang dumy serta kondisi aws saya yang menggunakan tierfree.

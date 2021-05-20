@@ -1,0 +1,11 @@
+ELB_DNS_NAME: finantier-dev-elb-2083299165.ap-southeast-1.elb.amazonaws.com
+ELB_DNS_NAME: finantier-dev-elb-521176099.ap-southeast-1.elb.amazonaws.com
+ELB_DNS_NAME: finantier-dev-elb-59136846.ap-southeast-1.elb.amazonaws.com
+ELB_DNS_NAME: finantier-dev-elb-1298499960.ap-southeast-1.elb.amazonaws.com
+ELB_DNS_NAME: finantier-dev-elb-1056095292.ap-southeast-1.elb.amazonaws.com
+ELB_DNS_NAME: finantier-dev-elb-688807086.ap-southeast-1.elb.amazonaws.com
+ELB_DNS_NAME: finantier-dev-elb-706668469.ap-southeast-1.elb.amazonaws.com
+ELB_DNS_NAME: finantier-dev-elb-2147011277.ap-southeast-1.elb.amazonaws.com
+DB_HOSTNAME: finantier-dev.cwns6rwfeuho.ap-southeast-1.rds.amazonaws.com
+ELB_DNS_NAME: finantier-dev-elb-1025053768.ap-southeast-1.elb.amazonaws.com
+DB_HOSTNAME: finantier-dev.cwns6rwfeuho.ap-southeast-1.rds.amazonaws.com
